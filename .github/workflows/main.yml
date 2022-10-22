@@ -1,0 +1,12 @@
+name: Code checks
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    -name: run main.py
+      run: python main.py
