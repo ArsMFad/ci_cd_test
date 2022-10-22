@@ -1,7 +1,14 @@
 name: run main.py
 
-on: [push]
-  
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      myInput:
+        description: 'Some'
+        default: 'test'
+        required: true
+      
 
 jobs:
   build:
@@ -23,7 +30,9 @@ jobs:
 
           
       - name: execute py script # run main.py
-        run: python main.py
+        run: |
+          python main.py
+          echo: ${{ github.event.inputs.myInput }}
           
       - name: commit files
         run: |
