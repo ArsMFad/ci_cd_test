@@ -8,5 +8,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    -name: run main.py
+    - name: run main.py
       run: python main.py
