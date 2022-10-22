@@ -183,31 +183,37 @@ def command(cmd):
     return True
 
 
-print('user - пользовательский режим\ntest - тестирование')
-while True:
-    mode = input('Введите режим работы: ')
-    if mode == 'user':
-        # user part
-        arr = ArrayCalculator()
-        FILENAME = 'test.txt'
-        if os.path.exists(FILENAME):
-            with open(FILENAME) as file:
-                arr.array = list(map(int, file.readline().split()))
-        info()
-        while command(input('Введите команду: ')):
-            pass
-    elif mode == 'test':
-        print("-----------------------------------")
-        # average test
-        print("Average test")
-        average_test()
-        print("-----------------------------------")
-        # speed test
-        print("Speed test")
-        speed_test()
-        print("-----------------------------------")
-        # unit tests part
-        print("Unit test")
-        unittest.main()
-    else:
-        print('unknown mode')
+def main(arg1):
+    print('user - пользовательский режим\ntest - тестирование')
+    mode = arg1
+    print(mode)
+    while True:
+        if mode == 'user':
+            # user part
+            arr = ArrayCalculator()
+            FILENAME = 'test.txt'
+            if os.path.exists(FILENAME):
+                with open(FILENAME) as file:
+                    arr.array = list(map(int, file.readline().split()))
+            info()
+            while command(input('Введите команду: ')):
+                pass
+        elif mode == 'test':
+            print("-----------------------------------")
+            # average test
+            print("Average test")
+            average_test()
+            print("-----------------------------------")
+            # speed test
+            print("Speed test")
+            speed_test()
+            print("-----------------------------------")
+            # unit tests part
+            print("Unit test")
+            unittest.main()
+        else:
+            print('unknown mode')
+
+
+if __name__ == '__main__':
+    main()
