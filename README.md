@@ -1,2 +1,2 @@
 # ci_cd_test
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+![main](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
